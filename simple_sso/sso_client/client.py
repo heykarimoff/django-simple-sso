@@ -20,7 +20,7 @@ class LoginView(View):
 
     def get(self, request):
         next = self.get_next()
-        scheme = 'https' if request.is_secure() else 'http'
+        scheme = 'https' #if request.is_secure() else 'http'
         query = urlencode([('next', next)])
         netloc = request.get_host()
         path = reverse('simple-sso-authenticate')
